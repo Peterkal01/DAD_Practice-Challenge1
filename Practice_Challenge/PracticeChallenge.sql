@@ -1,7 +1,7 @@
 /*Peter Kalogerakis 102577988*/
 
 
-/*Tour (TourName, Descr1iption)
+/*Tour (TourName, Description)
 PK (TourName)
 
 Event (EventYear, EventMonth, EventDay, Fee)
@@ -58,4 +58,32 @@ CREATE TABLE dbo.Booking (
     FOREIGN Key (TourName, EventDay, EventMonth, EventYear) REFERENCES Event
 );
 
+DELETE dbo.Booking
+DELETE dbo.Event
+DELETE dbo.Client
+DELETE dbo.Tour
 
+INSERT INTO dbo.Tour (TourName, Description)
+VALUES ('North', 'Tour of wineries and outlets of the Bedigo and Castlemaine region'),
+('South', 'Tour of Coles'),
+('East', 'Tour of Dan Murphys');
+
+
+INSERT INTO dbo.Client (ClientID, Surname, GivenName, Gender)
+VALUES (1, 'Price', 'Taylor', 'M'),
+(2, 'Smith', 'John', 'F'),
+(3, 'Le', 'Brandon', 'M'),
+(102577988, 'Kalogerakis', 'Peter', 'M');
+
+
+INSERT INTO dbo.Event (TourName, EventMonth, EventDay, EventYear, Fee)
+VALUES ('North', 'Jan', 9, 2016, 200),
+('South', 'Feb', 6, 2016, 300),
+('East', 'Mar', 3, 2016, 400),
+('West', 'Apr', 1, 2016, 500);
+
+INSERT INTO dbo.Booking (ClientId, TourName, EventMonth, EventDay, EventYear, Payment, DateBooked)
+VALUES (1, 'North',	'Jan', 9, 2016,	200, '2015/12/10'),
+(2, 'South', 'Feb', 6, 2016, 300, '2015/11/9'),
+(3, 'West', 'Apr', 1, 2016, 500, '2015/9/7'),
+(102577988, 'East',	'Mar', 3, 2016,	400, '2015/10/8');
