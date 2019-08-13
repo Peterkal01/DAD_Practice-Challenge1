@@ -69,6 +69,7 @@ VALUES ('North', 'Tour of wineries and outlets of the Bedigo and Castlemaine reg
 ('East', 'Tour of Dan Murphys');
 
 
+
 INSERT INTO dbo.Client (ClientID, Surname, GivenName, Gender)
 VALUES (1, 'Price', 'Taylor', 'M'),
 (2, 'Smith', 'John', 'F'),
